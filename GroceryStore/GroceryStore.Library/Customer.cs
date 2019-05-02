@@ -22,6 +22,11 @@ namespace GroceryStore.Library
         private string lastStoreOrderedFrom;//TODO: implement/change type later?
 
         /// <summary>
+        /// The customer's ID.
+        /// </summary>
+        public int CustId { get; set; }
+
+        /// <summary>
         /// The customer's first name. Cannot be empty.
         /// </summary>
         public string FirstName
