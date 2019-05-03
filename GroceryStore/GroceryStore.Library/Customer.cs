@@ -17,9 +17,9 @@ namespace GroceryStore.Library
         private string _state;
         private string _zipCode;
         private string _country;
-        private string _defaultStore; //TODO: implement/change type later?
+        private int _defaultStoreId;
         private DateTime _timeLastOrderPlaced;
-        private string lastStoreOrderedFrom;//TODO: implement/change type later?
+        //private string lastStoreOrderedFrom;//TODO: implement/change type later?
 
         /// <summary>
         /// The customer's ID.
@@ -181,6 +181,23 @@ namespace GroceryStore.Library
         }
 
         /// <summary>
+        /// The customer's default store. Allowed to be empty.
+        /// </summary>
+        public int DefaultStoreId
+        {
+            get => _defaultStoreId;
+            set
+            {
+                _defaultStoreId = value;
+                /*
+                if(String.IsNullOrEmpty(value.ToString());
+                {
+                    throw new ArgumentException("Default store Id cannot be empty.");
+                }*/
+            }
+        }
+
+        /// <summary>
         /// Checks to see if number input is a valid US phone number WITH area code.
         /// It is written to all users to enter whatever delimiters they want
         /// or no delimiters at all (i.e. 111-222-3333, or 111.222.3333,
@@ -192,7 +209,6 @@ namespace GroceryStore.Library
         {
             return Regex.Match(phone, @"^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$").Success;
         }
-
 
     }
 }
