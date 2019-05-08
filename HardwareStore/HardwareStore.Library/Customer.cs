@@ -8,14 +8,14 @@ namespace HardwareStore.Library
         private string _firstName;
         private string _lastName;
         private string _phoneNumber;
-        private string _address;
+        /*private string _address;
         private string _city;
         private string _state;
         private string _zipCode;
-        private string _country;
-        private int _defaultStoreId;
+        private string _country;*/
+        public int DefaultStoreId { get; set; }
         private DateTime _timeLastOrderPlaced;
-        //private string lastStoreOrderedFrom;//TODO: implement/change type later?
+        //private int lastStoreOrderedFrom;//TODO: implement/change type later?
 
         /// <summary>
         /// The customer's ID.
@@ -73,6 +73,8 @@ namespace HardwareStore.Library
                 _phoneNumber = value;
             }
         }
+       
+        /*
         /// <summary>
         /// The customer's address. Cannot be empty.
         /// </summary>
@@ -156,42 +158,35 @@ namespace HardwareStore.Library
                 }
                 _country = value;
             }
-        }
+        }*/
 
         /// <summary>
-        /// The customer's address. Cannot be empty.
+        /// The time customer placed last order. Cannot be empty.
         /// </summary>
         //TODO: maybe change this later?
         public DateTime TimeLastOrderPlaced
         {
             get => _timeLastOrderPlaced;
-            set
-            {
-                if (value == null)
-                {
-                    throw new ArgumentException("Time last order placed cannot be empty.", nameof(value));
-
-                }
-                _timeLastOrderPlaced = value;
-            }
+            set => _timeLastOrderPlaced = value;
         }
 
         /// <summary>
         /// The customer's default store. Allowed to be empty.
         /// </summary>
-        public int DefaultStoreId
+        /*public int DefaultStoreId
         {
             get => _defaultStoreId;
             set
-            {
-                _defaultStoreId = value;
-                /*
-                if(String.IsNullOrEmpty(value.ToString());
+            {                
+                if(value.Length==0);
                 {
                     throw new ArgumentException("Default store Id cannot be empty.");
-                }*/
+                }
+                _defaultStoreId = value;
             }
-        }
+        }*/
+
+        //public int LastStoreOrderedFrom { get; set; }
 
         /// <summary>
         /// Checks to see if number input is a valid US phone number WITH area code.

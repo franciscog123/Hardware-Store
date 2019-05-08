@@ -7,12 +7,13 @@ namespace HardwareStore.Library
     /// <summary>
     /// A product object. each product has an Id, name, description, and price.
     /// </summary>
-    class Products
+    public class Products
     {
         public int ProductId { get; set; }
         private string _productName;
         private string _description;
         private decimal _price;
+
 
         //Todo:maybe add TypeID/producttype later? or will do in db?
 
@@ -21,6 +22,10 @@ namespace HardwareStore.Library
             get => _productName;
             set
             {
+                if (value.Length == 0)
+                {
+                    throw new ArgumentException("Product name cannot be empty.", nameof(value));
+                }
                 _productName = value;
             }
         }
