@@ -1,6 +1,6 @@
 # Hardware-Store
 
-A simple Web application representing the UI for a Hardware store that an employee would be using to place/manage customer orders. 
+A simple Web application representing the UI for a Hardware store that an employee would use to place/manage customer orders. 
 
 Created with the following technologies:
 - C#
