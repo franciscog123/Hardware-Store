@@ -24,4 +24,4 @@ Structure:
 - Business logic/class library
 - Data access layer
 - UI/ASP.NET MVC Web Application
-- Test
+- Tests
